@@ -1,5 +1,5 @@
 import {expect, test} from '@jest/globals';
-import plus from '../src/tests_for_jest/testindex.js';
+import plus from '../src/tests_for_jest/plus.js';
 
 test('plus', () => {
     expect(plus(1, 2)).toBe(3);
