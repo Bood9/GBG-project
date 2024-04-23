@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "brainteasers, puzzles and minigames",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Bood9/GBG-project/issues"
   },
-  "homepage": "https://github.com/Bood9/GBG-project#readme"
+  "homepage": "https://github.com/Bood9/GBG-project#readme",
+  "devDependencies": {
+    "@stryker-mutator/jest-runner": "^8.2.6",
+    "eslint": "^9.1.1",
+    "jest": "^29.7.0",
+    "stryker": "^0.35.1"
+  }
 }
