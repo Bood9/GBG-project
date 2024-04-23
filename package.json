@@ -1,0 +1,19 @@
+{
+  "name": "gbg-project",
+  "version": "1.0.0",
+  "description": "brainteasers, puzzles and minigames",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bood9/GBG-project.git"
+  },
+  "author": "Bood9",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bood9/GBG-project/issues"
+  },
+  "homepage": "https://github.com/Bood9/GBG-project#readme"
+}
