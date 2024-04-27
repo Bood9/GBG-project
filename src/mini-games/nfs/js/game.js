@@ -72,7 +72,7 @@ const ASSETS = {
     // Размеры картинок подбирались вручную
     IMAGE: {
         TREE: {
-            src: "/src/mini-games/nfs/img/tree.png",
+            src: "/src/mini-games/nfs/img/tree.pngx",
             width: 132,
             height: 192,
         },
@@ -98,7 +98,7 @@ const ASSETS = {
 
         SKY: {
             src: "/src/mini-games/nfs/img/cloud.jpg",
-        },F
+        },
     },
 
     AUDIO: {
