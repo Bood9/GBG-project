@@ -10,7 +10,6 @@ let currentWord, correctLetters, wrongGuessCount;
 const maxGuesses = 6;
 
 const resetGame = () => {
-    // Ressetting game variables and UI elements
     correctLetters = [];
     wrongGuessCount = 0;
     hangmanImage.src = "images/hangman-0.svg";
