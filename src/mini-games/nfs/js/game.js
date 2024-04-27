@@ -98,7 +98,7 @@ const ASSETS = {
 
         SKY: {
             src: "/src/mini-games/nfs/img/cloud.jpg",
-        },
+        },F
     },
 
     AUDIO: {
