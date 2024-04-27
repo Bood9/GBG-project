@@ -1,8 +1,8 @@
 export const CarsList = [
     {
         id: 1,
-        src: '/mini-games/nfs/img/M5CS.png',
-        poster: '/mini-games/nfs/img/posters/bmw-m5-cs.png',
+        src: '/src/mini-games/nfs/img/M5CS.png',
+        poster: '/src/mini-games/nfs/img/posters/BMW-M5-CS.png',
         carName: 'Bmw m5 cs',
         maxSpeed: 331,
         accelInGame: 45,
@@ -16,8 +16,8 @@ export const CarsList = [
     },
     {
         id: 2,
-        src: '/mini-games/nfs/img/hero.png',
-        poster: '/mini-games/nfs/img/posters/ferrari-testerossa.png',
+        src: '/src/mini-games/nfs/img/hero.png',
+        poster: '/src/mini-games/nfs/img/posters/ferrari-testerossa.png',
         carName: 'Ferrari testerossa',
         maxSpeed: 200,
         accelInGame: 38,

@@ -72,32 +72,32 @@ const ASSETS = {
     // Размеры картинок подбирались вручную
     IMAGE: {
         TREE: {
-            src: "../img/tree.png",
+            src: "/src/mini-games/nfs/img/tree.png",
             width: 132,
             height: 192,
         },
 
         HERO: {
-            src: "../img/M5CS.png",
+            src: "/src/mini-games/nfs/img/M5CS.png",
             width: 110,
             height: 103,
         },
 
         CAR: {
-            src: "../img/base-car.png",
+            src: "/src/mini-games/nfs/img/base-car.png",
             width: 50,
             height: 36,
         },
 
         FINISH: {
-            src: "../img/finish.png",
+            src: "/src/mini-games/nfs/img/finish.png",
             width: 339,
             height: 180,
             offset: -0.5,
         },
 
         SKY: {
-            src: "../img/cloud.jpg",
+            src: "/src/mini-games/nfs/img/cloud.jpg",
         },
     },
 
