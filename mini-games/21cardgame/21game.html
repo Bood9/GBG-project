@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра в 21</title>
+    <link rel="stylesheet" href="21game.css">
+</head>
+<body>
+    <div id="game">
+        <div id="player-hand" class="hand">
+            <!-- Карты игрока будут появляться здесь -->
+        </div>
+        <div id="dealer-hand" class="hand">
+            <!-- Карты дилера будут появляться здесь -->
+        </div>
+        <div id="buttons">
+            <button id="hit-button">Взять</button>
+            <button id="stand-button">Хватит</button>
+            <button id="deal-button">Начать игру</button>
+        </div>
+        <div id="message"></div>
+    </div>
+
+    <script src="cards.js"></script>
+    <script src="21game.js"></script>
+</body>
+</html>
