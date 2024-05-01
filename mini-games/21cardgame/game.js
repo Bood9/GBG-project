@@ -1,65 +1,54 @@
+const cards = [
+    { value: '2', suit: 'Hearts', image: 'images/2.png' },
+    { value: '3', suit: 'Hearts', image: 'images/3.png' },
+    { value: '4', suit: 'Hearts', image: 'images/4.png' },
+    { value: '5', suit: 'Hearts', image: 'images/5.png' },
+    { value: '6', suit: 'Hearts', image: 'images/6.png' },
+    { value: '7', suit: 'Hearts', image: 'images/7.png' },
+    { value: '8', suit: 'Hearts', image: 'images/8.png' },
+    { value: '9', suit: 'Hearts', image: 'images/9.png' },
+    { value: '10', suit: 'Hearts', image: 'images/10.png' },
+    { value: 'J', suit: 'Hearts', image: 'images/j.png' },
+    { value: 'Q', suit: 'Hearts', image: 'images/q.png' },
+    { value: 'K', suit: 'Hearts', image: 'images/k.png' },
+    { value: 'A', suit: 'Hearts', image: 'images/A.png' },
+    // Другие карты для мастей Diamonds, Clubs и Spades
+];
+
+
+
 const game = {
     deck: [],
     players: {
         player: [],
         dealer: []
     },
-    cards: [
-        { value: '2', suit: 'hearts', image: '/cards/2.png' },
-        { value: '3', suit: 'hearts', image: '/cards/3.png' },
-        { value: '4', suit: 'hearts', image: '/cards/4.png' },
-        { value: '5', suit: 'hearts', image: '/cards/5.png' },
-        { value: '6', suit: 'hearts', image: '/cards/6.png' },
-        { value: '7', suit: 'hearts', image: '/cards/7.png' },
-        { value: '8', suit: 'hearts', image: '/cards/8.png' },
-        { value: '9', suit: 'hearts', image: '/cards/9.png' },
-        { value: '10', suit: 'hearts', image: '/cards/10.png' },
-        { value: 'J', suit: 'hearts', image: '/cards/j.png' },
-        { value: 'Q', suit: 'hearts', image: '/cards/q.png' },
-        { value: 'K', suit: 'hearts', image: '/cards/k.png' },
-        { value: 'A', suit: 'hearts', image: '/cards/A.png' }
-        // Добавьте другие карты при необходимости
-    ],
+    message: document.getElementById('message'),
+    playerHand: document.getElementById('player-hand'),
+    dealerHand: document.getElementById('dealer-hand'),
+    hitButton: document.getElementById('hit-button'),
+    standButton: document.getElementById('stand-button'),
+    dealButton: document.getElementById('deal-button'),
+    cards: cards,
 
-    initialize() {
-        this.createDeck();
-        this.shuffleDeck();
-    },
-
-    createDeck() {
-        // Создаем колоду карт на основе данных
-        for (let cardData of this.cards) {
-            this.deck.push({
-                value: cardData.value,
-                suit: cardData.suit,
-                image: cardData.image
-            });
+    initializeDeck() {
+        for (let card of this.cards) {
+            this.deck.push(card);
         }
     },
 
     shuffleDeck() {
-        // Перемешиваем колоду карт
         for (let i = this.deck.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [this.deck[i], this.deck[j]] = [this.deck[j], this.deck[i]];
         }
     },
 
-    dealInitialCards() {
-        // Раздаем начальные карты игроку и дилеру
-        for (let i = 0; i < 2; i++) {
-            this.players.player.push(this.deck.pop());
-            this.players.dealer.push(this.deck.pop());
-        }
-    },
-
-    hit(player) {
-        // Даем дополнительную карту игроку
-        player.push(this.deck.pop());
+    dealCard() {
+        return this.deck.pop();
     },
 
     calculateHandValue(hand) {
-        // Вычисляем сумму очков на руке
         let sum = 0;
         let hasAce = false;
         for (let card of hand) {
@@ -82,53 +71,68 @@ const game = {
         return sum;
     },
 
-    checkBlackjack(hand) {
-        // Проверяем, есть ли блэкджек на руке
-        if (hand.length === 2) {
-            const values = hand.map(card => card.value);
-            if (values.includes('A') && (values.includes('10') || values.includes('J') || values.includes('Q') || values.includes('K'))) {
-                return true;
-            }
+    displayCard(hand, element) {
+        const card = document.createElement('img');
+        card.classList.add('card');
+        card.src = hand.image;
+        element.appendChild(card);
+    },
+
+    displayMessage(message) {
+        this.message.textContent = message;
+    },
+
+    clearHands() {
+        this.playerHand.innerHTML = '';
+        this.dealerHand.innerHTML = '';
+    },
+
+    dealInitialCards() {
+        this.clearHands();
+        for (let i = 0; i < 2; i++) {
+            this.players.player.push(this.dealCard());
+            this.players.dealer.push(this.dealCard());
         }
-        return false;
+        this.displayCard(this.players.player[0], this.playerHand);
+        this.displayCard(this.players.player[1], this.playerHand);
+        this.displayCard(this.players.dealer[0], this.dealerHand);
+        this.displayMessage('Ваш ход. Выберите "Взять" или "Хватит".');
     },
 
-    checkBust(hand) {
-        // Проверяем, перебор у игрока
-        return this.calculateHandValue(hand) > 21;
+    init() {
+        this.initializeDeck();
+        this.shuffleDeck();
+        this.dealButton.addEventListener('click', () => this.dealInitialCards());
+        this.hitButton.addEventListener('click', () => this.hit());
+        this.standButton.addEventListener('click', () => this.stand());
     },
 
-    dealerPlay() {
-        // Ход дилера
+    hit() {
+        this.players.player.push(this.dealCard());
+        this.displayCard(this.players.player[this.players.player.length - 1], this.playerHand);
+        const playerValue = this.calculateHandValue(this.players.player);
+        if (playerValue > 21) {
+            this.displayMessage('Вы проиграли!');
+        } else if (playerValue === 21) {
+            this.displayMessage('Поздравляем! Вы выиграли!');
+        }
+    },
+
+    stand() {
         while (this.calculateHandValue(this.players.dealer) < 17) {
-            this.hit(this.players.dealer);
+            this.players.dealer.push(this.dealCard());
+            this.displayCard(this.players.dealer[this.players.dealer.length - 1], this.dealerHand);
         }
-    },
-
-    determineWinner() {
-        // Определяем победителя игры
         const playerValue = this.calculateHandValue(this.players.player);
         const dealerValue = this.calculateHandValue(this.players.dealer);
-
-        if (playerValue > 21) {
-            return 'dealer';
-        } else if (dealerValue > 21 || playerValue > dealerValue) {
-            return 'player';
+        if (dealerValue > 21 || playerValue > dealerValue) {
+            this.displayMessage('Поздравляем! Вы выиграли!');
         } else if (playerValue === dealerValue) {
-            return 'tie';
+            this.displayMessage('Ничья!');
         } else {
-            return 'dealer';
+            this.displayMessage('Вы проиграли!');
         }
-    },
-
-    // Другие функции и логика игры...
-
-    startGame() {
-        this.initialize();
-        this.dealInitialCards();
-        // Добавьте здесь логику начала игры после инициализации и раздачи карт
     }
 };
 
-// Для начала игры вызовите метод startGame()
-game.startGame();
+game.init();
