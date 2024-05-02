@@ -15,8 +15,6 @@ const cards = [
     // Другие карты для мастей Diamonds, Clubs и Spades
 ];
 
-
-
 const game = {
     deck: [],
     players: {
