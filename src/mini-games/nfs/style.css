@@ -364,6 +364,22 @@ Guide
     justify-content: space-between;
     max-width: 1000px;
     margin: 10px auto;
+
+}
+
+audio::-webkit-media-controls-panel{
+    background-color: rgb(134, 134, 134);
+}
+
+audio::-webkit-media-controls-mute-button{
+    background-color: rgb(134, 134, 134);
+}
+
+audio::-webkit-media-controls-play-button{
+    background-color: rgb(134, 134, 134);
+}
+audio::-webkit-media-controls-enclosure{
+    background-color: #a61a9d;
 }
 
 #controls > span > span {
