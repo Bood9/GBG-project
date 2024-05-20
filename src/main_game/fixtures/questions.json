@@ -40,5 +40,19 @@
       "woman",
       "what"
     ]
+  },
+  {
+    "reports": 0,
+    "stars": 0,
+    "question": "how long is",
+    "type": "number",
+    "author": "Dima",
+    "correctAnswer": 100,
+    "answers": [
+      "10",
+      "200",
+      "60000000",
+      "-5"
+    ]
   }
 ]

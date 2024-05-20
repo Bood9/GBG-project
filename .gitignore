@@ -5,3 +5,4 @@ node_modules
 reports
 # coverage for jest --colors
 coverage
+.env

@@ -1,0 +1,21 @@
+<!DOCTYPE: HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>GBG-project</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <h1 id="title">GBG-project</h1>
+    <p id="question"></p>
+    <script type="module">
+        import getRandomQuestion from './src/main_game/utils/getRandomQuestion.js';
+        const randomQuestion = getRandomQuestion();
+        console.log(randomQuestion)
+        document.getElementById("question").innerText = randomQuestion.question;
+        document.getElementById("question").innerHTML = randomQuestion.question;
+    </script>
+</body>
+</html>
