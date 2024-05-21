@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,53 +8,65 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0; /* Убираем отступы по умолчанию */
-            padding: 0; /* Убираем внутренние отступы по умолчанию */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background-image: url('table.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         #game {
-            text-align: center;
-            margin-top: 50px;
             display: flex;
-            flex-direction: column; /* Поля располагаются одно над другим */
-            align-items: center; /* Центрирование по горизонтали */
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            z-index: 1;
         }
 
         .player-field,
         .dealer-field {
-            background-color: #90ee90;
             padding: 20px;
-            border: 2px solid #ffd700; /* Золотая рамка */
             border-radius: 10px;
-            margin-bottom: 20px;
-            width: 100%; /* Растягиваем поля на всю ширину страницы */
-            overflow-y: auto; /* Включение вертикального скролла, если карты не помещаются */
+            width: 45%;
+            overflow-y: auto;
+            text-align: center;
         }
 
         .player-avatar,
         .dealer-avatar {
-            width: 100px;
-            height:100px;
-            margin-bottom: 10px;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 0px;
+            filter: grayscale(50%);
         }
 
         #player-cards,
         #dealer-cards {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Карты переносятся на новую строку при необходимости */
-            align-items: center; /* Центрирование карт по горизонтали */
+            flex-wrap: wrap
+            align-items: center;
+            filter: grayscale(100%);
         }
 
         img {
-            width: 150px;
+            width: 70px;
             height: auto;
-            margin: 5px; /* Небольшое расстояние между картами */
+            margin: 5px;
         }
 
         #buttons {
-            margin-top: 20px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: fixed;
         }
 
         button {
@@ -63,23 +76,39 @@
         }
 
         #result {
-            font-size: 24px;
+            font-size: 30px;
             font-weight: bold;
             margin-top: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .backtable {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
         }
     </style>
 </head>
+
 <body>
+    <img class="backtable" src="images/table.png">
     <div id="game">
         <div class="player-field">
             <img class="player-avatar" src="images/player.png" alt="Player Avatar">
-        
             <div id="player-cards"></div>
             <div id="player-score"></div>
         </div>
         <div class="dealer-field">
             <img class="dealer-avatar" src="images/computer.png" alt="Dealer Avatar">
-         
             <div id="dealer-cards"></div>
             <div id="dealer-score"></div>
         </div>
@@ -92,7 +121,7 @@
         <div id="result"></div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const playerCardContainer = document.getElementById("player-cards");
             const dealerCardContainer = document.getElementById("dealer-cards");
             const playerScoreDisplay = document.getElementById("player-score");
@@ -107,14 +136,14 @@
             let playerScore = 0;
             let dealerScore = 0;
 
-            startBtn.addEventListener("click", function() {
+            startBtn.addEventListener("click", function () {
                 startGame();
                 startBtn.style.display = "none";
                 hitBtn.style.display = "inline-block";
                 standBtn.style.display = "inline-block";
             });
 
-            hitBtn.addEventListener("click", function() {
+            hitBtn.addEventListener("click", function () {
                 takeCard(playerCards, playerCardContainer);
                 updateScoreDisplay();
                 if (playerScore > 21) {
@@ -122,11 +151,11 @@
                 }
             });
 
-            standBtn.addEventListener("click", function() {
+            standBtn.addEventListener("click", function () {
                 dealerTurn();
             });
 
-            restartBtn.addEventListener("click", function() {
+            restartBtn.addEventListener("click", function () {
                 startBtn.style.display = "inline-block";
                 hitBtn.style.display = "none";
                 standBtn.style.display = "none";
@@ -150,7 +179,7 @@
             }
 
             function takeCard(cardsArray, cardContainer) {
-                const cardValue = Math.floor(Math.random() * 9) + 2; 
+                const cardValue = Math.floor(Math.random() * 9) + 2;
                 const cardImage = `images/card${cardValue}.png`;
                 cardsArray.push({ value: cardValue, image: cardImage });
                 updateCards(cardsArray, cardContainer);
@@ -207,4 +236,5 @@
         });
     </script>
 </body>
+
 </html>
