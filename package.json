@@ -24,6 +24,6 @@
     "stryker": "^0.35.1"
   },
   "dependencies": {
-    "mongodb": "^6.6.2"
+    "node-fetch": "^3.3.2"
   }
 }
