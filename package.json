@@ -2,7 +2,7 @@
   "name": "gbg-project",
   "version": "1.0.0",
   "description": "brainteasers, puzzles and minigames",
-  "main": "index.js",
+  "main": "index.html",
   "type": "module",
   "scripts": {
     "test": "jest --colors"
