@@ -1,0 +1,304 @@
+[debug] [2024-05-15T08:51:56.374Z] ----------------------------------------------------------------------
+[debug] [2024-05-15T08:51:56.377Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-05-15T08:51:56.377Z] CLI Version:   13.9.0
+[debug] [2024-05-15T08:51:56.377Z] Platform:      win32
+[debug] [2024-05-15T08:51:56.377Z] Node Version:  v21.7.2
+[debug] [2024-05-15T08:51:56.377Z] Time:          Wed May 15 2024 11:51:56 GMT+0300 (Moscow Standard Time)
+[debug] [2024-05-15T08:51:56.378Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-15T08:51:56.388Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-15T08:51:56.389Z] > authorizing via signed-in user (mmikhail602@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\mmikh\GBG-project
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-05-15T08:52:08.586Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-05-15T08:52:09.057Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-05-15T08:52:09.057Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project greatbraingames (GreatBrainGames) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2024-05-15T08:52:11.212Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-05-15T08:52:11.212Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:52:12.124Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firebasedatabase.googleapis.com 200
+[debug] [2024-05-15T08:52:12.124Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2024-05-15T08:52:12.125Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/greatbraingames/locations/-/instances/greatbraingames-default-rtdb [none]
+[debug] [2024-05-15T08:52:12.976Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/greatbraingames/locations/-/instances/greatbraingames-default-rtdb 200
+[debug] [2024-05-15T08:52:12.976Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/greatbraingames/locations/-/instances/greatbraingames-default-rtdb {"name":"projects/756268816378/locations/europe-west1/instances/greatbraingames-default-rtdb","project":"projects/756268816378","databaseUrl":"https://greatbraingames-default-rtdb.europe-west1.firebasedatabase.app","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2024-05-15T08:52:17.758Z] >>> [apiv2][query] GET https://greatbraingames-default-rtdb.europe-west1.firebasedatabase.app/.settings/rules.json [none]
+[debug] [2024-05-15T08:52:17.872Z] <<< [apiv2][status] GET https://greatbraingames-default-rtdb.europe-west1.firebasedatabase.app/.settings/rules.json 200
+[debug] [2024-05-15T08:52:17.872Z] <<< [apiv2][body] GET https://greatbraingames-default-rtdb.europe-west1.firebasedatabase.app/.settings/rules.json [stream]
+[info] +  Database Rules for greatbraingames-default-rtdb have been written to database.rules.json. 
+[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Firestore Setup
+[debug] [2024-05-15T08:52:17.876Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firestore.googleapis.com [none]
+[debug] [2024-05-15T08:52:17.877Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firestore.googleapis.com x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:52:18.820Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firestore.googleapis.com 200
+[debug] [2024-05-15T08:52:18.821Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firestore.googleapis.com [omitted]
+[debug] [2024-05-15T08:52:18.821Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default) [none]
+[debug] [2024-05-15T08:52:19.072Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default) 200
+[debug] [2024-05-15T08:52:19.073Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default) {"name":"projects/greatbraingames/databases/(default)","uid":"09552231-c31d-4ef2-9849-237424483842","createTime":"2024-05-15T08:51:21.091350Z","updateTime":"2024-05-15T08:51:21.091350Z","locationId":"eur3","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-05-15T08:51:21.091350Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"e","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IP7i3eSjj4YDMJay3sejj4YD"}
+[debug] [2024-05-15T08:52:19.073Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-05-15T08:52:19.073Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-15T08:52:19.073Z] > authorizing via signed-in user (mmikhail602@gmail.com)
+[debug] [2024-05-15T08:52:19.073Z] [iam] checking project greatbraingames for permissions ["firebase.projects.get"]
+[debug] [2024-05-15T08:52:19.074Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions [none]
+[debug] [2024-05-15T08:52:19.074Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:52:19.074Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-15T08:52:19.830Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions 200
+[debug] [2024-05-15T08:52:19.831Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-05-15T08:52:23.909Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/releases pageSize=10&pageToken=
+[debug] [2024-05-15T08:52:24.795Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/releases 200
+[debug] [2024-05-15T08:52:24.795Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/releases {"releases":[{"name":"projects/greatbraingames/releases/cloud.firestore","rulesetName":"projects/greatbraingames/rulesets/98c96aef-790a-493d-8486-a75b0c0bb31f","createTime":"2024-05-15T08:51:28.105832Z","updateTime":"2024-05-15T08:51:28.105832Z"}]}
+[debug] [2024-05-15T08:52:24.796Z] Found ruleset: projects/greatbraingames/rulesets/98c96aef-790a-493d-8486-a75b0c0bb31f
+[debug] [2024-05-15T08:52:24.796Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/rulesets/98c96aef-790a-493d-8486-a75b0c0bb31f [none]
+[debug] [2024-05-15T08:52:25.572Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/rulesets/98c96aef-790a-493d-8486-a75b0c0bb31f 200
+[debug] [2024-05-15T08:52:25.572Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/rulesets/98c96aef-790a-493d-8486-a75b0c0bb31f [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-05-15T08:52:29.235Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-05-15T08:52:29.239Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-05-15T08:52:29.506Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-05-15T08:52:29.506Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2024-05-15T08:52:29.608Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-05-15T08:52:29.608Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/greatbraingames/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] 
+=== Functions Setup
+[debug] [2024-05-15T08:52:29.611Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-15T08:52:29.611Z] > authorizing via signed-in user (mmikhail602@gmail.com)
+[debug] [2024-05-15T08:52:29.611Z] [iam] checking project greatbraingames for permissions ["firebase.projects.get"]
+[debug] [2024-05-15T08:52:29.612Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions [none]
+[debug] [2024-05-15T08:52:29.612Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:52:29.612Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-15T08:52:30.352Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions 200
+[debug] [2024-05-15T08:52:30.352Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-15T08:52:30.352Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-05-15T08:52:30.352Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:52:30.354Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-05-15T08:52:30.354Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:52:31.277Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com 200
+[debug] [2024-05-15T08:52:31.278Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2024-05-15T08:52:31.278Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2024-05-15T08:52:31.278Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:52:31.281Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/runtimeconfig.googleapis.com 200
+[debug] [2024-05-15T08:52:31.281Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-05-15T08:52:31.897Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2024-05-15T08:52:31.897Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2024-05-15T08:52:41.909Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-05-15T08:52:41.910Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:52:42.848Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com 200
+[debug] [2024-05-15T08:52:42.848Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/package.json 
+[info] +  Wrote functions/.eslintrc.js 
+[info] +  Wrote functions/index.js 
+[info] +  Wrote functions/.gitignore 
+[info] 
+=== Hosting Setup
+[debug] [2024-05-15T08:53:44.069Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/greatbraingames [none]
+[debug] [2024-05-15T08:53:44.317Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/greatbraingames 200
+[debug] [2024-05-15T08:53:44.317Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/greatbraingames {"projectId":"greatbraingames","projectNumber":"756268816378","displayName":"GreatBrainGames","name":"projects/greatbraingames","resources":{"hostingSite":"greatbraingames","realtimeDatabaseInstance":"greatbraingames-default-rtdb"},"state":"ACTIVE","etag":"1_0ad1aa66-80c9-4a35-8921-ca6b241c26ae"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2024-05-15T08:56:09.591Z] Error: Path contains invalid characters: C:\Users\mmikh\GBG-project\https:\github.com\Bood9\GBG-project.git
+    at checkPath (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\node_modules\fs-extra\lib\mkdirs\utils.js:16:21)
+    at module.exports.makeDirSync (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\node_modules\fs-extra\lib\mkdirs\make-dir.js:21:3)
+    at Object.createFileSync (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\node_modules\fs-extra\lib\ensure\file.js:59:45)
+    at Config.writeProjectFile (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\lib\config.js:154:12)
+    at C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\lib\config.js:178:22
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async doSetup (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\lib\init\features\hosting\index.js:173:13)
+    at async init (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\lib\init\index.js:39:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-05-15T08:56:23.477Z] ----------------------------------------------------------------------
+[debug] [2024-05-15T08:56:23.482Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-05-15T08:56:23.482Z] CLI Version:   13.9.0
+[debug] [2024-05-15T08:56:23.483Z] Platform:      win32
+[debug] [2024-05-15T08:56:23.483Z] Node Version:  v21.7.2
+[debug] [2024-05-15T08:56:23.483Z] Time:          Wed May 15 2024 11:56:23 GMT+0300 (Moscow Standard Time)
+[debug] [2024-05-15T08:56:23.483Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-15T08:56:23.497Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-15T08:56:23.498Z] > authorizing via signed-in user (mmikhail602@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\mmikh\GBG-project
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-05-15T08:56:44.242Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-05-15T08:56:44.753Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-05-15T08:56:44.753Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project greatbraingames (GreatBrainGames) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2024-05-15T08:56:45.252Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-05-15T08:56:45.252Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:56:46.237Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firebasedatabase.googleapis.com 200
+[debug] [2024-05-15T08:56:46.237Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2024-05-15T08:56:46.238Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/greatbraingames/locations/-/instances/greatbraingames-default-rtdb [none]
+[debug] [2024-05-15T08:56:47.131Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/greatbraingames/locations/-/instances/greatbraingames-default-rtdb 200
+[debug] [2024-05-15T08:56:47.131Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/greatbraingames/locations/-/instances/greatbraingames-default-rtdb {"name":"projects/756268816378/locations/europe-west1/instances/greatbraingames-default-rtdb","project":"projects/756268816378","databaseUrl":"https://greatbraingames-default-rtdb.europe-west1.firebasedatabase.app","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[debug] [2024-05-15T08:56:50.301Z] >>> [apiv2][query] GET https://greatbraingames-default-rtdb.europe-west1.firebasedatabase.app/.settings/rules.json [none]
+[debug] [2024-05-15T08:56:50.433Z] <<< [apiv2][status] GET https://greatbraingames-default-rtdb.europe-west1.firebasedatabase.app/.settings/rules.json 200
+[debug] [2024-05-15T08:56:50.433Z] <<< [apiv2][body] GET https://greatbraingames-default-rtdb.europe-west1.firebasedatabase.app/.settings/rules.json [stream]
+[info] +  Database Rules for greatbraingames-default-rtdb have been written to database.rules.json. 
+[info] Future modifications to database.rules.json will update Realtime Database Security Rules when you run
+[info] firebase deploy.
+[info] 
+=== Firestore Setup
+[debug] [2024-05-15T08:56:50.438Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firestore.googleapis.com [none]
+[debug] [2024-05-15T08:56:50.438Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firestore.googleapis.com x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:56:51.364Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firestore.googleapis.com 200
+[debug] [2024-05-15T08:56:51.365Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/firestore.googleapis.com [omitted]
+[debug] [2024-05-15T08:56:51.365Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default) [none]
+[debug] [2024-05-15T08:56:51.638Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default) 200
+[debug] [2024-05-15T08:56:51.638Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default) {"name":"projects/greatbraingames/databases/(default)","uid":"09552231-c31d-4ef2-9849-237424483842","createTime":"2024-05-15T08:51:21.091350Z","updateTime":"2024-05-15T08:51:21.091350Z","locationId":"eur3","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-05-15T08:51:21.091350Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"e","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IM7k2eakj4YDMJ2Q3+mjj4YD"}
+[debug] [2024-05-15T08:56:51.638Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-05-15T08:56:51.638Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-15T08:56:51.639Z] > authorizing via signed-in user (mmikhail602@gmail.com)
+[debug] [2024-05-15T08:56:51.639Z] [iam] checking project greatbraingames for permissions ["firebase.projects.get"]
+[debug] [2024-05-15T08:56:51.639Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions [none]
+[debug] [2024-05-15T08:56:51.639Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:56:51.639Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-15T08:56:52.391Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions 200
+[debug] [2024-05-15T08:56:52.392Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-05-15T08:56:54.230Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/releases pageSize=10&pageToken=
+[debug] [2024-05-15T08:56:55.049Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/releases 200
+[debug] [2024-05-15T08:56:55.050Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/releases {"releases":[{"name":"projects/greatbraingames/releases/cloud.firestore","rulesetName":"projects/greatbraingames/rulesets/98c96aef-790a-493d-8486-a75b0c0bb31f","createTime":"2024-05-15T08:51:28.105832Z","updateTime":"2024-05-15T08:51:28.105832Z"}]}
+[debug] [2024-05-15T08:56:55.050Z] Found ruleset: projects/greatbraingames/rulesets/98c96aef-790a-493d-8486-a75b0c0bb31f
+[debug] [2024-05-15T08:56:55.050Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/rulesets/98c96aef-790a-493d-8486-a75b0c0bb31f [none]
+[debug] [2024-05-15T08:56:55.257Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/rulesets/98c96aef-790a-493d-8486-a75b0c0bb31f 200
+[debug] [2024-05-15T08:56:55.257Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/greatbraingames/rulesets/98c96aef-790a-493d-8486-a75b0c0bb31f [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-05-15T08:57:01.490Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-05-15T08:57:01.495Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-05-15T08:57:01.797Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-05-15T08:57:01.797Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/greatbraingames/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[debug] [2024-05-15T08:57:01.797Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-05-15T08:57:01.797Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/greatbraingames/databases/(default)/collectionGroups/-/indexes {}
+[info] 
+=== Functions Setup
+[debug] [2024-05-15T08:57:01.800Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-15T08:57:01.801Z] > authorizing via signed-in user (mmikhail602@gmail.com)
+[debug] [2024-05-15T08:57:01.801Z] [iam] checking project greatbraingames for permissions ["firebase.projects.get"]
+[debug] [2024-05-15T08:57:01.801Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions [none]
+[debug] [2024-05-15T08:57:01.802Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:57:01.802Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-15T08:57:02.538Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions 200
+[debug] [2024-05-15T08:57:02.538Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/greatbraingames:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-05-15T08:57:02.538Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-05-15T08:57:02.538Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:57:02.539Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-05-15T08:57:02.540Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/greatbraingames
+[debug] [2024-05-15T08:57:03.456Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com 200
+[debug] [2024-05-15T08:57:03.456Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2024-05-15T08:57:03.481Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/runtimeconfig.googleapis.com 200
+[debug] [2024-05-15T08:57:03.482Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/greatbraingames/services/runtimeconfig.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/package.json 
+[info] +  Wrote functions/.eslintrc.js 
+[info] +  Wrote functions/index.js 
+[info] +  Wrote functions/.gitignore 
+[info] 
+=== Hosting Setup
+[debug] [2024-05-15T08:57:24.471Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/greatbraingames [none]
+[debug] [2024-05-15T08:57:24.697Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/greatbraingames 200
+[debug] [2024-05-15T08:57:24.697Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/greatbraingames {"projectId":"greatbraingames","projectNumber":"756268816378","displayName":"GreatBrainGames","name":"projects/greatbraingames","resources":{"hostingSite":"greatbraingames","realtimeDatabaseInstance":"greatbraingames-default-rtdb"},"state":"ACTIVE","etag":"1_0ad1aa66-80c9-4a35-8921-ca6b241c26ae"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2024-05-15T08:57:40.283Z] Error: Path contains invalid characters: C:\Users\mmikh\GBG-project\https:\github.com\Bood9\GBG-project
+    at checkPath (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\node_modules\fs-extra\lib\mkdirs\utils.js:16:21)
+    at module.exports.makeDirSync (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\node_modules\fs-extra\lib\mkdirs\make-dir.js:21:3)
+    at Object.createFileSync (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\node_modules\fs-extra\lib\ensure\file.js:59:45)
+    at Config.writeProjectFile (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\lib\config.js:154:12)
+    at C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\lib\config.js:178:22
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async doSetup (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\lib\init\features\hosting\index.js:173:13)
+    at async init (C:\Users\mmikh\AppData\Roaming\nvm\v21.7.2\node_modules\firebase-tools\lib\init\index.js:39:9)
+[error] 
+[error] Error: An unexpected error has occurred.

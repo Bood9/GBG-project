@@ -17,6 +17,15 @@
       <a class="header-menu header-mini_games">Mini Games</a>
       <a class="header-menu header-contacts">Contacts</a>
     </header>
+    <h1 id="title">GBG-project</h1>
+    <p id="question"></p>
+    <script type="module">
+        import getRandomQuestion from './src/main_game/utils/getRandomQuestion.js';
+        const randomQuestion = getRandomQuestion();
+        console.log(randomQuestion)
+        document.getElementById("question").innerText = randomQuestion.question;
+        document.getElementById("question").innerHTML = randomQuestion.question;
+    </script>
     <div class="main">
       <div class="main-main_game">
         <div class="random">

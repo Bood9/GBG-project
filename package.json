@@ -24,6 +24,7 @@
     "stryker": "^0.35.1"
   },
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "readline-sync": "^1.4.10"
   }
 }
